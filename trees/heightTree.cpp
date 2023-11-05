@@ -40,10 +40,40 @@ node* createTree(node* root)
     root->left = createTree(root->left);
     return root;
 }
-
+node* bst(node* root,int num){
+    if(root==NULL)
+    {
+        node* temp = new node(num);
+        return temp;
+    }
+    if(num<root->data)
+    {
+        root->left = bst(root->left,num);
+    }
+    else
+    {
+        root->right = bst(root->right,num);
+    }
+    return root;
+}
+void dx(node* &root)
+{
+    if(root==NULL){
+        return;
+    }
+    cout<<root->data<<" ";
+    dx(root->left);
+    dx(root->right);
+}
 int main()
 {
     node* root = NULL;
-    root = createTree(root);
+    int d =5;
+    for(int i=0;i<d;i++){
+        int n;
+        cin>>n;
+        root= bst(root,n);
+    }
+    dx(root);
     cout<<heightOfTree(root);
 }

@@ -87,15 +87,11 @@ Node* deleteNOde(Node* root,int num)
         }
         Node* successor = findInorderSuccessor(root->right);
         root->data = successor->data;
-        root->right = deleteNOde(root->right,successor->num);
+        root->right = deleteNOde(root->right,successor->data);
     }
     return root;
 
 }
-
-
-
-
 void print(Node* root){
     if(root==NULL){
         return;

@@ -57,7 +57,7 @@ int main()
     {0, 0, 0, 1, 0, 0},
     {0, 0, 0, 1, 0, 0}
 };
-    bfs(graph,6);
+    //bfs(graph,6);
     vector<int> visited(0,6);
     dfs(graph,visited,0);
 }
